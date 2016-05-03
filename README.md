@@ -8,8 +8,11 @@ Still under development, but whats there should work
 var Smaragd = preload("res://smaragd.gd")
 
 func _ready():
-	var my_array = Smaragd.array_randi(5,5,0,8)
-	print(my_array)
+	var my_array = Smaragd.array_randi(10,2,0,20)
+	print("Given array: ", my_array)
+	print("Biggest number: ", Smaragd.array_max(my_array))
+	print("Smallest number: ", Smaragd.array_min(my_array))
+	print("Avarage: ", Smaragd.array_avarage(my_array))
 ```
 
 ## Methods
@@ -34,4 +37,25 @@ var my_array = Smaragd.array_randi(10,5,0,10)
 Initialize an array and fill it with unique random integers from range. Currently its slow, make nmax higher.
 ```gdscript
 var my_array = Smaragd.array_randi(10,5,0,10)
+```
+
+### array_max(array)
+Get the biggest int in an array
+```gdscript
+var my_array = Smaragd.array_randi(10,5,0,10)
+print(Smaragd.array_max(my_array))
+```
+
+### array_min(array)
+Get the smallest int in an array
+```gdscript
+var my_array = Smaragd.array_randi(10,5,0,10)
+print(Smaragd.array_min(my_array))
+```
+
+### array_avarage(array)
+Get avarage of an array
+```gdscript
+var my_array = Smaragd.array_randi(10,5,0,10)
+print(Smaragd.array_avarage(my_array))
 ```
