@@ -81,3 +81,30 @@ func array_unique_randi(width, height, nmin, nmax):
 				count += 1
 	
 	return array
+
+# Get the biggest int in array
+func array_max(array):
+	var current_max = array[0][0]
+	for y in range(array.size()):
+		for x in range(array[0].size()):
+			if array[y][x] > current_max:
+				current_max = array[y][x]
+	return current_max
+
+# Get the smallest int in array
+func array_min(array):
+	var current_min = array[0][0]
+	for y in range(array.size()):
+		for x in range(array[0].size()):
+			if array[y][x] < current_min:
+				current_min = array[y][x]
+	return current_min
+	
+# Get avarage of array
+func array_avarage(array):
+	var total = 0
+	for y in range(array.size()):
+		for x in range(array[0].size()):
+			total += array[y][x]
+	total = total / (array.size()*array[0].size())
+	return total
