@@ -1,6 +1,6 @@
 # Smaragd by Alket - MIT License
 # Initialize a array and fill it
-func array(width,height,fill):
+func array(width, height, fill):
 	var array = []
 	for y in range(height):
 		array.append([])
@@ -9,13 +9,13 @@ func array(width,height,fill):
 	return array
 
 # Initialize a array and fill it with random integers
-func array_randi(width,height,nmin,nmax):
+func array_randi(width, height, nmin, nmax):
 	randomize()
 	var array = []
 	var rand_int = 0
 	if nmin >= nmax:
 		print("Min int can't be bigger or equal than max int")
-		return 1
+		return ERR_INVALID_DATA
 	else:
 		for y in range(height):
 			array.append([])
@@ -25,36 +25,35 @@ func array_randi(width,height,nmin,nmax):
 		return array
 	
 # Initialize a array and fill it with random unique integers
-func array_unique_randi(width,height,nmin,nmax):
+func array_unique_randi(width, height, nmin, nmax):
 	randomize()
 	var array = []
+	var free_set = []
+	var rand_ints = []
 	var rand_int = 0
 	var total_cells = width * height
 	var count = 0
-	var rand_ints = []
-	var is_used = false
 	
 	if nmin >= nmax:
 		print("Min int can't be bigger or equal than max int")
-		return 1
+		return ERR_INVALID_DATA
 	elif total_cells >= nmax-nmin:
 		print("There are not enough numbers to fill the cells")
-		return 1
+		return ERR_INVALID_DATA
 	else:
 		for y in range(height):
 			array.append([])
 			for x in range(width):
 				array[y].append(0)
 		
-		while total_cells > 0:
-			rand_int = (randi() % nmax-nmin) + nmin
-			for i in rand_ints:
-				if rand_int == i:
-					is_used = true
-			if not is_used:
-				rand_ints.append(rand_int)
-				total_cells -= 1
-		
+		for i in range(nmin,nmax):
+			free_set.append(i)
+			
+		for i in range(total_cells):
+			rand_int = randi() % free_set.size()
+			rand_ints.append(free_set[rand_int])
+			free_set.remove(rand_int)
+			
 		for y in range(height):
 			for x in range(width):
 				array[y][x] = rand_ints[count]
