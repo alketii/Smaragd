@@ -18,14 +18,19 @@ Initialize an array and fill it with int,str,etc.
 ```gdscript
 var my_array = Smaragd.array(10,5,0)
 ```
+### array_rangei(width, height, start, end)
+Initialize an array with ranged ints
+```gdscript
+var my_array = Smaragd.array_rangei(10,2,0,20)
+```
 
-### array_randi(width, height, nmin, nmax)
+### array_randi(width, height, min, max)
 Initialize an array and fill it with random integers from range
 ```gdscript
 var my_array = Smaragd.array_randi(10,5,0,10)
 ```
 
-### array_unique_randi(width, height, nmin, nmax)
+### array_unique_randi(width, height, min, max)
 Initialize an array and fill it with unique random integers from range. Currently its slow, make nmax higher.
 ```gdscript
 var my_array = Smaragd.array_randi(10,5,0,10)
