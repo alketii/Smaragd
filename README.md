@@ -25,7 +25,7 @@ Initialize an array and fill it with random integers from range
 var my_array = Smaragd.array_randi(10,5,0,10)
 ```
 
-### array_randi(width,height,nmin,nmax)
+### array_unique_randi(width,height,nmin,nmax)
 Initialize an array and fill it with unique random integers from range. Currently its slow, make nmax higher.
 ```gdscript
 var my_array = Smaragd.array_randi(10,5,0,10)
