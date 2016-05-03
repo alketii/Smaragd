@@ -1,5 +1,5 @@
 # Smaragd by Alket - MIT License
-# Initialize a array and fill it
+# Initialize an array and fill it
 func array(width, height, fill):
 	var array = []
 	for y in range(height):
@@ -8,14 +8,35 @@ func array(width, height, fill):
 			array[y].append(fill)
 	return array
 
-# Initialize a array and fill it with random integers
+# Initialize an array with ranged ints
+func array_rangei(width, height, nstart, nend):
+	var array = []
+	var nrange = []
+	var count = 0
+	if width * height > nend - nstart:
+		print("There aren't enough ints to fill the cells.")
+		return ERR_UNCONFIGURED
+	else:
+		for i in range(nstart, nend):
+			nrange.append(i)
+		for y in range(height):
+			array.append([])
+			for x in range(width):
+				array[y].append(0)
+		for y in range(height):
+			for x in range(width):
+				array[y][x] = nrange[count]
+				count += 1
+		return array
+
+# Initialize an array and fill it with random integers
 func array_randi(width, height, nmin, nmax):
 	randomize()
 	var array = []
 	var rand_int = 0
 	if nmin >= nmax:
 		print("Min int can't be bigger or equal than max int")
-		return ERR_INVALID_DATA
+		return ERR_UNCONFIGURED
 	else:
 		for y in range(height):
 			array.append([])
@@ -24,7 +45,7 @@ func array_randi(width, height, nmin, nmax):
 				array[y].append(rand_int)
 		return array
 	
-# Initialize a array and fill it with random unique integers
+# Initialize an array and fill it with random unique integers
 func array_unique_randi(width, height, nmin, nmax):
 	randomize()
 	var array = []
@@ -36,10 +57,10 @@ func array_unique_randi(width, height, nmin, nmax):
 	
 	if nmin >= nmax:
 		print("Min int can't be bigger or equal than max int")
-		return ERR_INVALID_DATA
+		return ERR_UNCONFIGURED
 	elif total_cells >= nmax-nmin:
 		print("There are not enough numbers to fill the cells")
-		return ERR_INVALID_DATA
+		return ERR_UNCONFIGURED
 	else:
 		for y in range(height):
 			array.append([])
