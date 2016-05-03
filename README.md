@@ -1,7 +1,7 @@
 # Smaragd
-A class which helps with arrays and numbers
+A class which helps with 2D and 3D arrays and numbers
 
-Still under development, but whats there should work
+Still under development, but whats here should work. I plan to add more features over time.
 
 ## Usage
 ```gdscript
