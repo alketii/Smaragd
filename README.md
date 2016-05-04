@@ -1,7 +1,7 @@
 # Smaragd
 A class which helps with 2D and 3D arrays and numbers
 
-Still under development, but whats here should work. I plan to add more features over time.
+Still under development, but whats here should work. I plan to add more features and enhance it over time.
 
 ## Usage
 ```gdscript
@@ -34,7 +34,7 @@ var my_array = Smaragd.array_randi(10,5,0,10)
 ```
 
 ### array_unique_randi(width, height, min, max)
-Initialize an array and fill it with unique random integers from range. Currently its slow, make nmax higher.
+Initialize an array and fill it with unique random integers from range.
 ```gdscript
 var my_array = Smaragd.array_randi(10,5,0,10)
 ```
